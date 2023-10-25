@@ -1,3 +1,6 @@
+# DES Algorithm
+![DES Algorithm Structure](https://media.geeksforgeeks.org/wp-content/uploads/20200306124326/Steps-in-DES.png)
+
 # Feistel Cipher
 ![Feistel Cipher Structure](https://www.tokenex.com/wp-content/uploads/2022/09/22-Feistel-Cipher-Decrypt-02-02-606x779.png)
 
