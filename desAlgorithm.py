@@ -1,3 +1,5 @@
+import binascii
+
 def main():
 
     print()
@@ -152,7 +154,8 @@ def DES(text, key, padding, isEncrypt):
         result += permutation(rightBlock + leftBlock, finalPermutationMatrix)
 
     # Converting bit array to string
-    finalResult = bitArrayToString(result)
+    # finalResult = bitArrayToString(result)
+    finalResult = str(binascii.hexlify(bytearray(result)))
 
     return finalResult
 
