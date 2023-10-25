@@ -1,4 +1,4 @@
-import binascii
+import base64
 
 def main():
 
@@ -24,8 +24,10 @@ def main():
 
     # Printing result
     print()
-    print("Encrypted Ciphertext is : %r " % ciphertext)
-    print("Decrypted plaintext is  : ", plaintext)
+    print("Encrypted Ciphertext as string is    : %r " % ciphertext)
+    print("Encrypted Ciphertext as hex is       : %r " % ''.join([format(ord(char), 'x') for char in ciphertext]))
+    print("Encrypted Ciphertext as base64 is    : %r " % base64.b64encode(ciphertext.encode('utf-8')).decode('utf-8'))
+    print("Decrypted plaintext is               : ", plaintext)
     print()
 
 # Permutation Matrix used after each SBox substitution for each round
@@ -154,8 +156,7 @@ def DES(text, key, padding, isEncrypt):
         result += permutation(rightBlock + leftBlock, finalPermutationMatrix)
 
     # Converting bit array to string
-    # finalResult = bitArrayToString(result)
-    finalResult = str(binascii.hexlify(bytearray(result)))
+    finalResult = bitArrayToString(result)
 
     return finalResult
 
